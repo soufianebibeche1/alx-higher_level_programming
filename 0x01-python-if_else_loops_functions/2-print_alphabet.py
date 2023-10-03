@@ -1,2 +1,3 @@
 #!/usr/bin/python3
-print("abcdefghijklmnopqrstuvwxyz",end="")
+for character in range(ord("a"), ord("z") + 1):
+    print(chr(character), end="")
