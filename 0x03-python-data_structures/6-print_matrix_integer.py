@@ -2,9 +2,10 @@
 
 def print_matrix_integer(matrix=[[]]):
     for row in matrix:
-        for i, n in enumerate(row):
-            if i < len(row):
-                print("{:d}".format(n), end=" ")
+        for num in row:
+            # Check if the current number is not the last number in the row
+            if num in row[:-1]:
+                print("{:d}".format(num), end=" ")
             else:
-                print("{:d}".format(n), end="")
-        print()
+                print("{:d}".format(num), end="")
+        print("")
