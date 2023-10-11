@@ -1,9 +1,3 @@
 def square_matrix_simple(matrix=[]):
-    res = []
-
-    for row in matrix:
-        res_row = []
-        for item in row:
-            res_row.append(item ** 2)
-        res.append(res_row)
-    return res
+    squared_matrix = [[x**2 for x in row] for row in matrix]
+    return squared_matrix
