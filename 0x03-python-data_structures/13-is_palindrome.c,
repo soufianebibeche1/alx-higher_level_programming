@@ -1,0 +1,75 @@
+#include "lists.h"
+
+
+/**
+ * reverse_listint - Reverses a linked list.
+ * @head: Pointer to a pointer to the head of the list.
+ *
+ * Return: Pointer to the new head of the reversed list.
+ */
+listint_t *reverse_listint(listint_t **head)
+{
+	listint_t *node = *head;
+	listint_t *next, *prev = NULL;
+
+	while (node != NULL)
+	{
+		next = node->next;
+		node->next = prev;
+		prev = node;
+		node = next;
+	}
+
+	*head = prev;
+	return (*head);
+}
+
+/**
+ * is_palindrome - Checks if a linked list is a palindrome.
+ * @head: Pointer to a pointer to the head of the list.
+ *
+ * Return: 1 if the list is a palindrome, 0 otherwise.
+ */
+int is_palindrome(listint_t **head)
+{
+	listint_t *current, *rev, *mid;
+	size_t size = 0, i;
+
+	/* Check if the list is empty or has only one element. */
+	if (*head == NULL || (*head)->next == NULL)
+		return (1);
+
+	/* Count the number of elements in the list. */
+	current = *head;
+	while (current != NULL)
+	{
+		size++;
+		current = current->next;
+	}
+
+	current = *head;
+	for (i = 0; i < (size / 2) - 1; i++)
+		current = current->next;
+
+	 /* Check for an even number of elements with a mismatch. */
+	if ((size % 2) == 0 && current->n != current->next->n)
+		return (0);
+
+	current = current->next->next;
+	rev = reverse_listint(&current);
+	mid = rev;
+
+	current = *head;
+
+	/* Compare elements from the original and reversed lists. */
+	while (rev != NULL)
+	{
+		if (current->n != rev->n)
+			return (0);
+		current = current->next;
+		rev = rev->next;
+	}
+	reverse_listint(&mid); /* Restore the reversed list. */
+
+	return (1);
+}
