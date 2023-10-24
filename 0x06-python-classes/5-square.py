@@ -1,19 +1,20 @@
 #!/usr/bin/python3
-# 4-square.py
+# 5-square.py
 """ Class File """
 
 
 class Square:
     """ Square CLass Definition """
+
     def __init__(self, size=0):
         """ Constructor """
-        self.size = size
+        self.__size = size
 
     @property
     def size(self):
         """ Getter """
         return self.__size
-
+    
     @size.setter
     def size(self, value):
         """ Setter """
@@ -26,3 +27,11 @@ class Square:
     def area(self):
         """Return the current square's area"""
         return self.__size ** 2
+
+    def my_print(self):
+        """Print the square with the character '#'."""
+        if self.__size == 0:
+            print()
+        else:
+            for _ in range(self.__size):
+                print("#" * self.__size)
