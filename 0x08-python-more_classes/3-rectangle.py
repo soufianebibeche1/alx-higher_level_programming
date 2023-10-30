@@ -61,7 +61,6 @@ class Rectangle:
         """ Return string """
         return "Rectangle({}, {})".format(self.__width, self.__height)
 
-
     def __str__(self):
         """Return the string representation of the Rectangle obj."""
         if self.__width == 0 or self.__height == 0:
