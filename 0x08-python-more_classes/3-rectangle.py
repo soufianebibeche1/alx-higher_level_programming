@@ -52,16 +52,6 @@ class Rectangle:
         return ((self.__width * 2) + (self.__height * 2))
 
     def __str__(self):
-        """ Return String """
-        if self.__width == 0 or self.__height == 0:
-            return ""
-        return "\n".join(['#' * self.__width] * self.__height)
-
-    def __repr__(self):
-        """ Return string """
-        return "Rectangle({}, {})".format(self.__width, self.__height)
-
-    def __str__(self):
         """Return the string representation of the Rectangle obj."""
         if self.__width == 0 or self.__height == 0:
             return ("")
