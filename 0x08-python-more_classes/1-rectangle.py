@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 # 1-rectangle.py
-""" CLASS Rectangle """
+"""Rectangle class"""
 
 
 class Rectangle:
-    """ CLASS Definition """
+    """Define Rectangle."""
 
     def __init__(self, width=0, height=0):
         """Initialize a new Rectangle.
@@ -23,8 +23,8 @@ class Rectangle:
     @width.setter
     def width(self, value):
         if not isinstance(value, int):
-            raise TypeError("Width must be an integer")
-        elif value <= 0:
+            raise TypeError("width must be an integer")
+        if value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
 
@@ -36,7 +36,7 @@ class Rectangle:
     @height.setter
     def height(self, value):
         if not isinstance(value, int):
-            raise TypeError("Width must be an integer")
-        elif value <= 0:
-            raise ValueError("width must be >= 0")
+            raise TypeError("height must be an integer")
+        if value < 0:
+            raise ValueError("height must be >= 0")
         self.__height = value
