@@ -1,0 +1,29 @@
+# tests/0-add_integer.txt (Optional)
+
+# Test case 1: Valid input with integers
+>>> add_integer(1, 2)
+3
+
+# Test case 2: Valid input with one integer and one float
+>>> add_integer(100, -2.5)
+97
+
+# Test case 3: Valid input with one integer and one default value
+>>> add_integer(2)
+100
+
+# Test case 4: Valid input with float values
+>>> add_integer(100.3, -2.7)
+97
+
+# Test case 5: Invalid input with a string
+>>> add_integer(4, "School")
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+# Test case 6: Invalid input with None
+>>> add_integer(None)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
