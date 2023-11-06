@@ -4,4 +4,5 @@
 
 
 class BaseGeometry:
+    """A base geometry class for all geometrical objects in the program."""
     pass
