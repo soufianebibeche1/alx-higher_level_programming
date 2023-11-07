@@ -139,4 +139,4 @@ Test with print_sorted() on empty list
 >>> print(my_list)
 []
 >>> my_list.print_sorted()
-[]
+[]]
