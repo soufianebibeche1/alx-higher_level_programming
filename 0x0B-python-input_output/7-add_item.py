@@ -1,17 +1,24 @@
 #!/usr/bin/python3
-# 9-add_item.py
+# 7-add_item.py
 """ Python """
 import sys
+import json
+from os import path
 
 
-if __name__ == "__main__":
-    save_to_json_file = __import__('7-save_to_json_file').save_to_json_file
-    load_from_json_file = \
-        __import__('8-load_from_json_file').load_from_json_file
-    
-    try:
-        items = load_from_json_file("add_item.json")
-    except FileNotFoundError:
-        items = []
-    items.extend(sys.argv[1:])
-    save_to_json_file(items, "add_item.json")
+# Define the file name
+filename = "add_item.json"
+
+# Check if the file exists, and create an empty list if it doesn't
+if path.isfile(filename):
+    with open(filename, mode="r", encoding="utf-8") as file:
+        my_list = json.load(file)
+else:
+    my_list = []
+
+# Add command-line arguments to the list
+my_list.extend(sys.argv[1:])
+
+# Save the updated list to a JSON file
+with open(filename, mode="w", encoding="utf-8") as file:
+    json.dump(my_list, file)
