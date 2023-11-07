@@ -2,6 +2,7 @@
 # 0-read_file.py
 """ Python"""
 
+
 def read_file(filename=""):
     """Read and print the contents of a text file (UTF8).
 
@@ -11,5 +12,5 @@ def read_file(filename=""):
     Returns:
         None
     """
-    with open(filename, mode='r', encoding='utf-8') as file:
+    with open(filename, encoding='utf-8') as file:
         print(file.read(), end='')
