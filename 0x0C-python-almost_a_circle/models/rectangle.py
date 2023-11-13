@@ -1,6 +1,6 @@
+#!/usr/bin/python3
 # models/rectangle.py
 """ Python: 0x0C. Python - Almost a circle """
-import io
 from models.base import Base
 
 
@@ -22,18 +22,24 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """Setter for width attribute."""
-        self.validate_numeric("width", value)
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        elif value <= 0:
+            raise ValueError("width must be > 0")
         self.__width = value
 
     @property
     def height(self):
-        """Getter for height attribute."""
+        """Getter for width attribute."""
         return self.__height
     
     @height.setter
     def height(self, value):
         """Setter for height attribute."""
-        self.validate_numeric("height", value)
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        elif value <= 0:
+            raise ValueError("height must be > 0")
         self.__height = value
 
     @property
@@ -44,7 +50,10 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """Setter for x attribute."""
-        self.validate_numeric("x", value)
+        if not isinstance(value, int):
+            raise TypeError("x must be an integer")
+        elif value < 0:
+            raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
@@ -55,52 +64,8 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """Setter for y attribute."""
-        self.validate_numeric("y", value)
-        self.__y = value
-
-    def validate_numeric(self, attribute, value):
-        """Validate if a value is numeric."""
         if not isinstance(value, int):
-            raise TypeError("{} must be an integer".format(attribute))
-
-    def area(self):
-        """Calculate the area of a rectangle with given dimensions and position."""
-        return self.width * self.height
-
-    def display(self):
-        """Display the rectangle's attributes on the console."""
-        if self.width == 0 or self.height == 0:
-            print("")
-            return
-
-        [print("") for y in range(self.y)]
-        for h in range(self.height):
-            [print(" ", end="") for x in range(self.x)]
-            [print("#", end="") for w in range(self.width)]
-            print("")
-
-    def update(self, *args, **kwargs):
-        """Assign arguments to attributes."""
-        if args:
-            attributes = ["id", "width", "height", "x", "y"]
-            for i in range(len(args)):
-                setattr(self, attributes[i], args[i])
-        elif kwargs:
-            for key, value in kwargs.items():
-                setattr(self, key, value)
-
-    def to_dictionary(self):
-        """Return the dictionary representation of the Rectangle."""
-        return {
-            'id': self.id,
-            'width': self.width,
-            'height': self.height,
-            'x': self.x,
-            'y': self.y
-        }
-
-    def __str__(self):
-        """Return string representation of object."""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(
-            self.id, self.x, self.y, self.width, self.height
-        )
+            raise TypeError("y must be an integer")
+        elif value < 0:
+            raise ValueError("y must be >= 0")
+        self.__y = value
