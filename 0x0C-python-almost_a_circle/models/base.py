@@ -2,6 +2,7 @@
 # models/base.py
 """ Python: 0x0C. Python - Almost a circle """
 
+
 import json
 
 
