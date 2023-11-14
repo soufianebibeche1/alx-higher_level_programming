@@ -1,4 +1,5 @@
-/base.py
+#!/usr/bin/python3
+# models/base.py
 """Module defining the Base class."""
 import json
 
