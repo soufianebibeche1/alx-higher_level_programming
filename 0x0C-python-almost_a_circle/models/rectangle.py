@@ -8,16 +8,7 @@ class Rectangle(Base):
     """The Rectangle class, inherits from Base."""
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Constructor for the Rectangle class.
-
-        Args:
-            width (int): Width of the rectangle.
-            height (int): Height of the rectangle.
-            x (int): X-coordinate of the rectangle's position (default is 0).
-            y (int): Y-coordinate of the rectangle's position (default is 0).
-            id (int): If provided, assign it to the public instance attribute id.
-                      If not provided, the id will be automatically assigned by the Base class.
-        """
+        """ Constructor for the Rectangle class."""
         super().__init__(id)
         self.width = width
         self.height = height
@@ -31,11 +22,7 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
-        """Setter for the width attribute.
-
-        Args:
-            value (int): The value to set as the width.
-        """
+        """Setter for the width attribute."""
         self.__width = value
 
     @property
@@ -45,11 +32,7 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
-        """Setter for the height attribute.
-
-        Args:
-            value (int): The value to set as the height.
-        """
+        """Setter for the height attribute."""
         self.__height = value
 
     @property
@@ -59,11 +42,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
-        """Setter for the x attribute.
-
-        Args:
-            value (int): The value to set as the x-coordinate.
-        """
+        """Setter for the x attribute."""
         self.__x = value
 
     @property
@@ -73,9 +52,5 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        """Setter for the y attribute.
-
-        Args:
-            value (int): The value to set as the y-coordinate.
-        """
+        """Setter for the y attribute."""
         self.__y = value
