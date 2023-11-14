@@ -72,7 +72,7 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """Calculate the area of a rectangle with given dimensions and position."""
+        """Calculate the area of a rectangle."""
         return self.width * self.height
 
     def display(self):
@@ -98,7 +98,7 @@ class Rectangle(Base):
                 setattr(self, key, value)
 
     def to_dictionary(self):
-        """Return the dictionary representation of the Rectangle."""
+        """Return the dictionary representation of Rectangle."""
         return {
             'id': self.id,
             'width': self.width,
