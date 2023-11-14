@@ -32,20 +32,19 @@ class Base:
             if list_objs is None:
                 file.write("[]")
             else:
-                json_str = cls.to_json_string\
-                    ([obj.to_dictionary() for obj in list_objs])
+                json_str = cls.to_json_string([obj.to_dictionary() for obj in list_objs])
                 file.write(json_str)
 
     @staticmethod
     def from_json_string(json_string):
-        """Return the list repre by json_string."""
+        """Return the list represented by json_string."""
         if json_string is None or json_string == "":
             return []
         return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
-        """Return an instance with attributes already set."""
+        """Return an instance with all attributes already set."""
         if cls.__name__ == "Rectangle":
             instance = cls(1, 1)
         elif cls.__name__ == "Square":
