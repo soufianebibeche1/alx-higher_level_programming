@@ -1,6 +1,8 @@
-# models/square.py
+#!/usr/bin/python3
+# models/qquare.py
 """ Python: 0x0C. Python - Almost a circle """
-import io
+
+
 from models.rectangle import Rectangle
 
 
