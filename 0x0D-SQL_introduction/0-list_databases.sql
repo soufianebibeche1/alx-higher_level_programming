@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-SHOW DATABASES;
+-- lists or shows all available databases
+SHOW databases;
