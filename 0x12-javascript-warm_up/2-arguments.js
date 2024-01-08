@@ -8,3 +8,4 @@ switch (process.argv.length) {
     break;
   default:
     console.log('Arguments found');
+}
