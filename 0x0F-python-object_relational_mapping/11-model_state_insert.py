@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""adds the State object “Louisiana” to the
-database hbtn_0e_6_usa
-"""
+"""add State object “Louisiana” to the database """
 
 
 import sys
@@ -19,5 +17,4 @@ if __name__ == '__main__':
     states = State(name='Louisiana')
     session.add(states)
     session.commit()
-
     print(states.id)
